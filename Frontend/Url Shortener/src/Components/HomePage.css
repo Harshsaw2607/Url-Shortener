@@ -52,7 +52,7 @@ html, body {
 
 .hero-section {
     position: relative;
-    background-image: url('background.jpg');
+    background-image: url('../../public/background.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
