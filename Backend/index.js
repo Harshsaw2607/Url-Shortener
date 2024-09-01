@@ -7,9 +7,11 @@ import UrlRouter from './Router/UrlRouter.js';
 import { rateLimiter } from './RateLimiter.js';
 import AuthRouter from './Router/AuthRouter.js';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv'
+dotenv.config()
 DBConnection();
 
-app.use(cors({ origin:"http://localhost:5173", 
+app.use(cors({ origin:process.env.origin, 
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: 'Content-Type,Authorization'
