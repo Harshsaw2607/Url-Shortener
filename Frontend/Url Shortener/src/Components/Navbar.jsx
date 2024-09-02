@@ -15,25 +15,25 @@ function Navbar() {
     const UserIconRef = useRef();
     console.log("user in Navbar = ",user)
 
-    // useEffect(() => {
-    //   const func  = async () => {
-    //     await axios
-    //       .get(`${URL}/api/auth/profile`, { withCredentials: true })
-    //       .then((response) => {
-    //         console.log("response in Nav = ",response)
-    //         setUser({
-    //           email: response.data.user.username,
-    //           id: response.data.user.id,
-    //           roles: response.data.user.roles,
-    //         });
-    //         console.log("user in Nav = ",user)
-    //       })
-    //       .catch((error) => {
-    //         console.error('Error fetching profile:', error);
-    //       });
-    //     }
-    //     func()
-    //   }, []);
+    useEffect(() => {
+      const fetchUser  = async () => {
+        await axios
+          .get(`${URL}/api/auth/profile`, { withCredentials: true })
+          .then((response) => {
+            console.log("response in Nav = ",response)
+            setUser({
+              email: response.data.user.username,
+              id: response.data.user.id,
+              roles: response.data.user.roles,
+            });
+            console.log("user in Nav = ",user)
+          })
+          .catch((error) => {
+            console.error('Error fetching profile:', error);
+          });
+        }
+        fetchUser
+      }, [setUser]);
     
       const handleLogout = () => {
         axios
