@@ -33,7 +33,7 @@ function Navbar() {
           });
         }
         fetchUser
-      }, [setUser]);
+      }, []);
     
       const handleLogout = () => {
         axios
