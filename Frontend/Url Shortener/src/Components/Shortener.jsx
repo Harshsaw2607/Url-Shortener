@@ -3,10 +3,11 @@ import { handleRedirectToOriginalUrl, handleShortenUrl, handleQr } from '../api'
 import './Popup.css';
 import Navbar from './Navbar';
 
+
 function Shortener() {
     const [originalUrl, setOriginalUrl] = useState('');
     const [shortenedUrl, setShortenedUrl] = useState('');
-    const [domain, setDomain] = useState('http://localhost:3002');
+    const [domain, setDomain] = useState(process.env.VITE_DOMAIN);
     const [alias, setAlias] = useState('');
     const [errorMsgURL, setErrorMsgURL] = useState('');
     const [errorMsgAlias, setErrorMsgAlias] = useState('');
