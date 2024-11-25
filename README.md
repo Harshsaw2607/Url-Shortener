@@ -87,6 +87,6 @@ The result page! Users see the shortened URL and have the option to copy the lin
 3. Start the development server:
     ```bash
     npm start
-4. Open your browser and visit
+4. Open your browser and visit:
    ```arduino
    http://localhost:3002
